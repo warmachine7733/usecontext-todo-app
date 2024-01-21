@@ -6,7 +6,8 @@
     align-items: center;
 }
 
-.View>ul {
+.View > ul {
     overflow: scroll;
     height: 200px;
+    width: 100px;
 }

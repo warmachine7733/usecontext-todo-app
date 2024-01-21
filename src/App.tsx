@@ -24,19 +24,25 @@ function App() {
     setTodos((prev: []) => [inputVal, ...prev]);
     setInput("");
   };
-  const operations = useMemo(
-    () => ({
-      inputHandler,
-      addTodos,
-      todoList,
-      inputVal,
-    }),
-    [inputVal, todoList]
-  );
+  // const operations = useMemo(
+  //   () => ({
+  //     inputHandler,
+  //     addTodos,
+  //     todoList,
+  //     inputVal,
+  //   }),
+  //   [inputVal, todoList]
+  // );
 
+  const newOps = {
+    inputHandler,
+    addTodos,
+    todoList,
+    inputVal,
+  };
   return (
     <div className="wrapper">
-      <TodoContext.Provider value={operations}>
+      <TodoContext.Provider value={newOps}>
         <div className="App">
           <View />
           <div className="actions">
