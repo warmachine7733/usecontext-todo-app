@@ -10,7 +10,7 @@
         `<Child/>`\
         `</ParentContext.Provider>`\
     `)`\
-`}`\
+`}`
 
 
 
@@ -18,21 +18,21 @@
 
 ## way 1 - using consumer tag
 
-`import ParentContext from './ParentContext'
+`import ParentContext from './ParentContext'\
 
-export const Child = () => {
-   return (
-    <ParentContext.Consumer>
-      {
-        data => {
-            return(
-                <div>{data}</div>
-            )
-        }
-      }
-    </ParentContext.Consumer>
-   )
-}`
+export const Child = () => {\
+   return (\
+    <ParentContext.Consumer>\
+      {\
+        data => {\
+            return(\
+                <div>{data}</div>\
+            )\
+        }\
+      }\
+    </ParentContext.Consumer>\
+   )\
+}`\
 
 ## way 2 - using useConext
 
