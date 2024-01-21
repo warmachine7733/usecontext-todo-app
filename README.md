@@ -5,12 +5,12 @@
 `import { createContext } from 'react'`\
 `export const ParentContext = createContext(null)`\
 `export const Parent = () => {`\
-    `return (`
-        <ParentContext.Provider value={data}>
-        <Child/>
-        </ParentContext.Provider>
-    )
-}`
+    `return (`\
+        `<ParentContext.Provider value={data}>`\
+        `<Child/>`\
+        `</ParentContext.Provider>`\
+    `)`\
+`}`\
 
 
 
