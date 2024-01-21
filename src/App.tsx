@@ -35,7 +35,7 @@ function App() {
   );
 
   return (
-    <>
+    <div className="wrapper">
       <TodoContext.Provider value={operations}>
         <div className="App">
           <View />
@@ -45,7 +45,7 @@ function App() {
           </div>
         </div>
       </TodoContext.Provider>
-    </>
+    </div>
   );
 }
 
