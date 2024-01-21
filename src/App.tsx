@@ -1,25 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useMemo, useState } from "react";
+import "./App.css";
+import Button from "./components/Button";
+import Input from "./components/Input";
+import View from "./components/View";
+
+// interface Todo {
+//   state: {},
+//   cb: ()=> void;
+// }
+
+export const TodoContext = createContext({} as any);
 
 function App() {
+  const [inputVal, setInput] = useState("" as String);
+  const [todoList, setTodos] = useState([] as any);
+
+  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
+  const addTodos = () => {
+    console.log("input", inputVal);
+    setTodos((prev: []) => [inputVal, ...prev]);
+    setInput("");
+  };
+  const operations = useMemo(
+    () => ({
+      inputHandler,
+      addTodos,
+      todoList,
+      inputVal,
+    }),
+    [inputVal, todoList]
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <TodoContext.Provider value={operations}>
+        <div className="App">
+          <View />
+          <div className="actions">
+            <Input />
+            <Button />
+          </div>
+        </div>
+      </TodoContext.Provider>
+    </>
   );
 }
 
