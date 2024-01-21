@@ -1,20 +1,13 @@
 import { TodoContext } from "../App";
+import { useContext } from "react";
 
 function Button() {
+  const values = useContext(TodoContext);
   return (
     <div>
-      <TodoContext.Consumer>
-        {(values) => {
-          return (
-            <button
-              disabled={!values.inputVal}
-              onClick={() => values.addTodos()}
-            >
-              Add
-            </button>
-          );
-        }}
-      </TodoContext.Consumer>
+      <button disabled={!values.inputVal} onClick={() => values.addTodos()}>
+        Add
+      </button>
     </div>
   );
 }
