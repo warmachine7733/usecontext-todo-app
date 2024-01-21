@@ -4,11 +4,6 @@ import Button from "./components/Button";
 import Input from "./components/Input";
 import View from "./components/View";
 
-// interface Todo {
-//   state: {},
-//   cb: ()=> void;
-// }
-
 export const TodoContext = createContext({} as any);
 
 function App() {
@@ -24,15 +19,6 @@ function App() {
     setTodos((prev: []) => [inputVal, ...prev]);
     setInput("");
   };
-  // const operations = useMemo(
-  //   () => ({
-  //     inputHandler,
-  //     addTodos,
-  //     todoList,
-  //     inputVal,
-  //   }),
-  //   [inputVal, todoList]
-  // );
 
   const newOps = {
     inputHandler,
