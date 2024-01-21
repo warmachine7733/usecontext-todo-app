@@ -2,9 +2,9 @@
 ## createContext 
 - is used for wrapping children and passing props as values 
 
-`import { createContext } from 'react'`
-`export const ParentContext = createContext(null)`
-`export const Parent = () => {`
+`import { createContext } from 'react'`\
+`export const ParentContext = createContext(null)`\
+`export const Parent = () => {`\
     `return (`
         <ParentContext.Provider value={data}>
         <Child/>
